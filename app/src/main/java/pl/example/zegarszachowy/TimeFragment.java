@@ -27,8 +27,8 @@ public class TimeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        wspVM = new ViewModelProvider(requireActivity()).get(TimeViewModel.class);
-        tenVM = new ViewModelProvider(this).get(TimeViewModel.class);
+        wspVM = new ViewModelProvider(requireActivity()).get(TimeViewModel.class);//ViewModel wspólny dla wszystkich fragmentów
+        tenVM = new ViewModelProvider(this).get(TimeViewModel.class);//ViewModel indywidualny dla każdego fragmentu
         seconds=tenVM.licznikA;
         final Observer<Boolean> dzialaObserver =new Observer<Boolean>(){
             @Override
